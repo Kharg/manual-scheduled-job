@@ -1,0 +1,10 @@
+[
+    {
+      "route": "/ManualScheduledJob/action/RunOnce",
+      "method": "post",
+      "params": {
+        "controller": "ManualScheduledJob",
+        "action": "RunOnce"
+      }
+    }
+]

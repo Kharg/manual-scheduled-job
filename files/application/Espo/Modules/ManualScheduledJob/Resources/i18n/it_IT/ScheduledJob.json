@@ -1,0 +1,9 @@
+{
+    "labels": {
+        "Run Once": "Avvia Manualmente"
+    },
+    "messages": {
+        "willRunNextRound": "Il lavoro verrà eseguito al prossimo turno",
+        "cannotRunJob": "Impossibile avviare questo lavoro."
+    }
+}

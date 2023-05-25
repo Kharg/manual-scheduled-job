@@ -1,0 +1,11 @@
+{
+    "name": "Manual Scheduled Job",
+    "version": "1.0.0",
+    "type": "extension",
+    "acceptableVersions": [
+        ">=7.0.0"
+    ],
+    "releaseDate": "24/05/23",
+    "author": "Andrew Fontana",
+    "description": "Run Scheduled Jobs manually"
+}

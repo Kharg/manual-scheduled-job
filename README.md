@@ -11,7 +11,7 @@ This Extension allows to run jobs manually directly from EspoCRM UI.
 ## Introduction
 
 This Extension allows to run jobs manually directly from EspoCRM UI.
-It's a porting from https://github.com/espocrm/espocrm/issues/1194 rebuilt as an extension to be upgrade safe.
+It's a porting of the code by [Hofundur](https://github.com/Hofundur) from this issue https://github.com/espocrm/espocrm/issues/1194  rebuilt as an extension to be upgrade safe.
 
 
 After installation visit your schedules jobs to start using the extension. 

@@ -4,9 +4,9 @@
             "buttons": [
                "__APPEND__",
                {
-                   "label": "Run Once",
-                   "name": "RunOnce",
-                   "action": "RunOnce",
+                   "label": "Run Manually",
+                   "name": "RunManually",
+                   "action": "RunManually",
                    "style": "warning",
                    "iconHtml": "<span class='fas fa-business-time fa-sm'></span>",
                    "acl": "admin",

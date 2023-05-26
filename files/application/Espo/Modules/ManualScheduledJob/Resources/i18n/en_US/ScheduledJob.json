@@ -1,9 +1,9 @@
 {
     "labels": {
-        "Run Once": "Run Once"
+        "Run Manually": "Run Manually"
     },
     "messages": {
-        "willRunNextRound": "Job will run in next round",
+        "willRunNextRound": "Job will run in the next round",
         "cannotRunJob": "Cannot run this job."
     }
 }

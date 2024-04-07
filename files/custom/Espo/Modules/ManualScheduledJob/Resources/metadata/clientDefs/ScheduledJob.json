@@ -1,0 +1,22 @@
+{
+      "menu": {
+        "detail": {
+            "buttons": [
+               "__APPEND__",
+               {
+                   "label": "Run Manually",
+                   "name": "RunManually",
+                   "action": "RunManually",
+                   "style": "warning",
+                   "iconHtml": "<span class='fas fa-business-time fa-sm'></span>",
+                   "acl": "admin",
+                   "aclScope": "ScheduledJob",
+                   "data": {
+                       "handler": "manual-scheduled-job:manual-job-handler"
+                   },
+                   "initFunction": "initManualScheduledJob"
+                }
+            ]
+        }
+    }
+}

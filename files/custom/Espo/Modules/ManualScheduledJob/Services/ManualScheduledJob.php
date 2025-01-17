@@ -19,7 +19,7 @@ class ManualScheduledJob extends Record
      */
     public function runJobManually(object $data): bool {
         $nextDate = date('Y-m-d H:i:s');
-        $jobEntity = $this->getEntityManager()->getEntity('Job');
+        $jobEntity = $this->entityManager->getEntity('Job');
         
         $jobEntity->set([
             'name' => $data->name,
@@ -30,7 +30,7 @@ class ManualScheduledJob extends Record
         
         // Handle potential exceptions when saving the entity
         try {
-            return $this->getEntityManager()->saveEntity($jobEntity)? true : false;
+            return $this->entityManager->saveEntity($jobEntity)? true : false;
         } catch (\Exception $e) {
             // Log the error and re-throw it
             $GLOBALS['log']->error('Error while running ManualScheduledJob: ' . $e->getMessage());

@@ -1,39 +1,29 @@
-define('manual-scheduled-job:manual-job-handler', ['action-handler'], function (Dep) {
+define('manual-scheduled-job:manual-job-handler', ['action-handler'], (Dep) => {
 
-  return Dep.extend({
+  return class extends Dep {
 
-    actionRunManually: function () {
+    initManualScheduledJob() {}
+
+    runManually() {
       Espo.Ui.warning('Running...');
-      var data = {
+      const data = {
         id: this.view.model.id,
         name: this.view.model.attributes.name
       };
+    
+      Espo.Ajax.postRequest('ManualScheduledJob/action/RunManually', data)
+        .then(returnData => {
+          const message = this.view.translate('willRunNextRound', 'messages', 'ScheduledJob');
+          Espo.Ui.success(message);
+        })
+        .catch(() => {
+          const message = this.view.translate('cannotRunJob', 'messages', 'ScheduledJob');
+          Espo.Ui.error(message);
+        });
+    }
 
-      Espo.Ajax.postRequest('ManualScheduledJob/action/RunManually', data).then(returnData => {
-        let message = this.view.translate('willRunNextRound', 'messages', 'ScheduledJob');
-        Espo.Ui.success(message);
-      }).fail(() => {
-        let message = this.view.translate('cannotRunJob', 'messages', 'ScheduledJob');
-        Espo.Ui.error(message);
-      });
-    },
-
-    initManualScheduledJob: function () {
-      this.controlButtonVisibility();
-
-      this.view.listenTo(
-        this.view.model,
-        'change:status',
-        this.controlButtonVisibility.bind(this)
-      );
-    },
-
-    controlButtonVisibility: function () {
-      if (this.view.model.get('status') != 'Inactive') {
-        this.view.showHeaderActionItem('RunManually');
-      } else {
-        this.view.hideHeaderActionItem('RunManually');
-      }
-    },
-  });
+      isManualScheduledJobVisible() {
+        return this.view.model.get('status') !== 'Inactive';
+    }
+  }
 });

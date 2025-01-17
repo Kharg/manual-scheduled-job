@@ -6,15 +6,14 @@
                {
                    "label": "Run Manually",
                    "name": "RunManually",
-                   "action": "RunManually",
+                   "action": "runManually",
+                   "actionFunction": "runManually",
                    "style": "warning",
                    "iconHtml": "<span class='fas fa-business-time fa-sm'></span>",
-                   "acl": "admin",
+                   "acl": "read",
                    "aclScope": "ScheduledJob",
-                   "data": {
-                       "handler": "manual-scheduled-job:manual-job-handler"
-                   },
-                   "initFunction": "initManualScheduledJob"
+                   "handler": "manual-scheduled-job:manual-job-handler",
+                   "checkVisibilityFunction": "isManualScheduledJobVisible"
                 }
             ]
         }
